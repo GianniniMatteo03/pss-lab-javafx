@@ -12,10 +12,32 @@ public class App extends Application {
     @Override
     public void start(final Stage primaryStage) throws Exception {
         primaryStage.setTitle("Controls Exercise!");
-        final VBox mainPane = new VBox();
         final Counter counter = new Counter();
         // TODO aggiungere gli elementi come descritto da readme
-        primaryStage.setScene(new Scene(mainPane));
+        final Label lbl = new Label();
+        lbl.setText("0");
+        lbl.textProperty().bind(counter.counterProperty().asString());
+
+        final Button btn = new Button();
+        btn.setText("+");
+        btn.setMinWidth(100);
+        final Button btn2 = new Button();
+        btn2.setText("-");
+        btn2.setMinWidth(100);
+
+        btn.setOnMouseClicked(event -> {
+            counter.increment();
+        });
+        btn2.setOnMouseClicked(event -> {
+            counter.decrement();
+        });
+        
+        final HBox root = new HBox();
+        root.getChildren().add(btn);
+        root.getChildren().add(btn2);
+        root.getChildren().add(lbl);
+
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
