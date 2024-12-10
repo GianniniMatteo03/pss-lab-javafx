@@ -46,4 +46,4 @@ public class App extends Application {
             Application.launch(App.class, args);
         }
     }
-}
+} //finito e funziona. comando per eseguirlo da terminale: ./gradlew :javafx-1-property:run
