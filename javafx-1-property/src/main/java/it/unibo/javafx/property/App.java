@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.VBox; //ho usato HBox, ma il funzionamento non cambia, solo che imposta i campi orrizzontalmente
 import javafx.stage.Stage;
 
 public class App extends Application {
